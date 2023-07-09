@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager main;
-
-    public Transform startPoint;
-    public Transform[] path;
 
     public int gateHealth = 2;
     public bool gameOver = false;
@@ -18,14 +16,16 @@ public class LevelManager : MonoBehaviour
     }
 
     private void Update() {
-        if (main.gateHealth == 0) {
+        if (main.gateHealth == 0 || gameOver) {
             GameOver();
         }
     }
     
     private void GameOver() {
         Debug.Log("And that's game.");
-        gameOver = true;
+        gameOver = false;
+        SceneManager.LoadScene(0);
+
     }
 
 
