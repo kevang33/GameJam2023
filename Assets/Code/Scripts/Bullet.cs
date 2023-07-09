@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -26,8 +27,22 @@ public class Bullet : MonoBehaviour
         fireTime = 0f;
     }
 
-    public void SetFiringObjectTag(string tag) {
-        firingObjectTag = tag;
+    public void SetFiringObjectTag(string _firingObjectTag)
+    {
+        firingObjectTag = _firingObjectTag;
+        if (String.Compare(firingObjectTag, "Player") == 0 || String.Compare(firingObjectTag, "Enemy") == 0)
+        {
+            gameObject.layer = LayerMask.NameToLayer("EnemyBullet");
+        }
+        else if (String.Compare(firingObjectTag, "Turret") == 0)
+        {
+            gameObject.layer = LayerMask.NameToLayer("TurretBullet");
+        }
+    }
+
+    public void SetBulletSpeed(float _bulletSpeed)
+    {
+        bulletSpeed = _bulletSpeed;
     }
 
     private void FixedUpdate()

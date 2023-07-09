@@ -13,9 +13,9 @@ public class Health : MonoBehaviour
 
         if (hitPoints <= 0)
         {
-            if (gameObject.CompareTag("Enemy"))
+            if (gameObject.CompareTag("Player"))
             {
-                EnemySpawner.onEnemyDestroy.Invoke();
+                LevelManager.main.gameOver = true;
             }
             Destroy(gameObject);
         }

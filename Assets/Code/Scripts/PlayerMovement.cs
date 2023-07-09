@@ -10,16 +10,9 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Camera cam;
-    public GameObject flash;
 
     Vector2 movement;
     Vector2 mousePos;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        flash.SetActive(false);  
-    }
 
     // Getting input for movement, trigger movement
     void Update()
@@ -38,22 +31,5 @@ public class PlayerMovement : MonoBehaviour
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
-    }
-
-    public void showFlash()
-    {
-        Debug.Log("Shoot");
-        flash.SetActive(true);
-        // delay(flashTime);
-        Invoke("HideObject", flashTime);
-        
-        Debug.Log("Over");
-
-
-    }
-
-    private void HideObject() 
-    {
-        flash.SetActive(false);
     }
 }
