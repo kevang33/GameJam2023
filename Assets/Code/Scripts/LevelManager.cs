@@ -8,9 +8,25 @@ public class LevelManager : MonoBehaviour
 
     public Transform startPoint;
     public Transform[] path;
+
+    public int gateHealth = 2;
+    public bool gameOver = false;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         main = this;
     }
+
+    private void Update() {
+        if (main.gateHealth == 0) {
+            GameOver();
+        }
+    }
+    
+    private void GameOver() {
+        Debug.Log("And that's game.");
+        gameOver = true;
+    }
+
+
 }
