@@ -117,9 +117,9 @@ MonoBehaviour:
     m_Bits: 64
   bulletPrefab: {fileID: 7816222857170543433, guid: 0a7d88d682eca5e4786bf6a557408586, type: 3}
   firingPoint: {fileID: 315967036480822726}
-  targetingRange: 5
-  rotationSpeed: 200
-  bps: 1
+  targetingRange: 7
+  rotationSpeed: 400
+  bps: 3
 --- !u!58 &1250461163527055171
 CircleCollider2D:
   m_ObjectHideFlags: 0

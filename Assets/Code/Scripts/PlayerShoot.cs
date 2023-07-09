@@ -15,7 +15,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private float bps = 3f; //BulletsPerSecond
 
     private Transform mouseTransform;
-    private float bulletSpeed = 10f;
+    [SerializeField] private float bulletSpeed = 10f;
     private float timeUntilFire;
 
     // Start is called before the first frame update
