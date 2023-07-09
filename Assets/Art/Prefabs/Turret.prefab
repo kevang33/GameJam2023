@@ -74,10 +74,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3985111948537631515}
   - component: {fileID: 5993517470027982352}
-  - component: {fileID: 657042695930050011}
-  m_Layer: 0
+  - component: {fileID: 1250461163527055171}
+  - component: {fileID: 8185193975565971696}
+  m_Layer: 8
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +98,7 @@ Transform:
   - {fileID: 6923971536330081715}
   - {fileID: 8731990896565612535}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5993517470027982352
 MonoBehaviour:
@@ -120,7 +121,42 @@ MonoBehaviour:
   targetingRange: 3
   rotationSpeed: 200
   bps: 1
---- !u!114 &657042695930050011
+--- !u!58 &1250461163527055171
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4252492187331335523}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &8185193975565971696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4252492187331335523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaab4358930b837409ee992f71064a8c, type: 3}
+  m_Script: {fileID: 11500000, guid: f13c0d87dd4753548a8f6f86e1e7c1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 2

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class Health : MonoBehaviour
 {
     [Header("Attributes")]
     [SerializeField] private int hitPoints = 2;
@@ -13,7 +13,10 @@ public class EnemyHealth : MonoBehaviour
 
         if (hitPoints <= 0)
         {
-            EnemySpawner.onEnemyDestroy.Invoke();
+            if (gameObject.CompareTag("Enemy"))
+            {
+                EnemySpawner.onEnemyDestroy.Invoke();
+            }
             Destroy(gameObject);
         }
     }

@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
     private Transform target;
     private Vector2 direction;
     private float fireTime;
+    private string firingObjectTag;
 
 
     public void SetTarget(Transform _target)
@@ -23,6 +24,10 @@ public class Bullet : MonoBehaviour
         target = _target;
         direction = (target.position - transform.position).normalized;
         fireTime = 0f;
+    }
+
+    public void SetFiringObjectTag(string tag) {
+        firingObjectTag = tag;
     }
 
     private void FixedUpdate()
@@ -41,7 +46,9 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        other.gameObject.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+        if (other.gameObject.CompareTag(firingObjectTag)) return; // No friendly fire
+
+        other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
         Destroy(gameObject);
     }
 

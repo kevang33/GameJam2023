@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour {
 
     private void Update()
     {
-        if (!isSpawning) return;
+        if (LevelManager.main.gameOver || !isSpawning) return;
 
         timeSinceLastSpawn += Time.deltaTime;
 
