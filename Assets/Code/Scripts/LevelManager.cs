@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
     }
 
     private void Update() {
-        if (main.gateHealth == 0 || gameOver) {
+        if (gameOver == true) {
             GameOver();
         }
     }

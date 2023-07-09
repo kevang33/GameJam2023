@@ -7,7 +7,9 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        LevelManager.main.gameOver = true;
-
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            LevelManager.main.gameOver = true;
+        }
     }
 }
