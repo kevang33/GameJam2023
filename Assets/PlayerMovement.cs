@@ -6,9 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float moveSpeed = 5;
+    public float flashTime = 0.3f;
 
     public Rigidbody2D rb;
     public Camera cam;
+    public GameObject flash;
 
     Vector2 movement;
     Vector2 mousePos;
@@ -16,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        flash.SetActive(false);  
     }
 
     // Getting input for movement, trigger movement
@@ -36,5 +38,22 @@ public class PlayerMovement : MonoBehaviour
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
+    }
+
+    public void showFlash()
+    {
+        Debug.Log("Shoot");
+        flash.SetActive(true);
+        // delay(flashTime);
+        Invoke("HideObject", flashTime);
+        
+        Debug.Log("Over");
+
+
+    }
+
+    private void HideObject() 
+    {
+        flash.SetActive(false);
     }
 }
