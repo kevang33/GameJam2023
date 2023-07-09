@@ -74,6 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3985111948537631515}
   - component: {fileID: 5993517470027982352}
+  - component: {fileID: 657042695930050011}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -119,6 +120,19 @@ MonoBehaviour:
   targetingRange: 3
   rotationSpeed: 200
   bps: 1
+--- !u!114 &657042695930050011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4252492187331335523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaab4358930b837409ee992f71064a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 2
 --- !u!1 &6882396772637159553
 GameObject:
   m_ObjectHideFlags: 0
